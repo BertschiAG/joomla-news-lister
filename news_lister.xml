@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4.5" type="plugin" group="content">
+    <name>plg_news_lister</name>
+    <author>Janik Baumann</author>
+    <creationDate>October 03 2015</creationDate>
+    <copyright>Copyright (c) 2015 - 2016 Bertschi AG. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>janik.baumann@bertschi.com</authorEmail>
+    <authorUrl>www.bertschi.com</authorUrl>
+    <version>0.1</version>
+    <description>PLG_NEWS_LISTER_DESCRIPTION</description>
+    <files>
+        <filename plugin="news_lister">news_lister.php</filename>
+        <filename>index.html</filename>
+        <folder>engines</folder>
+        <folder>templates</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.plg_news_lister.ini</language>
+        <language tag="en-GB">en-GB.plg_news_lister.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+
+            <fieldset name="basic">
+                <field name="search_limit" type="text"
+                       default="50"
+                       description="JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC"
+                       label="JFIELD_PLG_SEARCH_SEARCHLIMIT_LABEL"
+                       size="5"
+                />
+
+                <field name="search_content" type="radio"
+                       default="0"
+                       description="JFIELD_PLG_SEARCH_ALL_DESC"
+                       label="JFIELD_PLG_SEARCH_ALL_LABEL"
+                >
+                    <option value="0">JOFF</option>
+                    <option value="1">JON</option>
+                </field>
+
+                <field name="search_archived" type="radio"
+                       default="0"
+                       description="JFIELD_PLG_SEARCH_ARCHIVED_DESC"
+                       label="JFIELD_PLG_SEARCH_ARCHIVED_LABEL"
+                >
+                    <option value="0">JOFF</option>
+                    <option value="1">JON</option>
+                </field>
+            </fieldset>
+
+        </fields>
+    </config>
+</extension>

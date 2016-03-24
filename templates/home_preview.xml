@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<template>
+    <hook>
+        <name>article.created</name>
+        <type>date</type>
+        <format>
+            <src>Y-m-d H:i:s</src>
+            <end>d.m.Y</end>
+        </format>
+    </hook>
+    <hook>
+        <name>article.title</name>
+        <type>string</type>
+    </hook>
+    <hook>
+        <name>nl.link</name>
+        <type>string</type>
+    </hook>
+    <hook>
+        <name>nl.word.more</name>
+        <type>string</type>
+    </hook>
+</template>
