@@ -1,4 +1,4 @@
-# Jobs Lister
+# News Lister
 
 ## Global Information
 
