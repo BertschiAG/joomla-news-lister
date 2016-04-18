@@ -18,7 +18,7 @@
 | Author         | Janik Baumann                                                     |
 | Creation Date  | October 03 2015                                                   |
 | Copyright      | Copyright (c) 2015 - 2016 Bertschi AG. All rights reserved.       |
-| License        | GNU General Public License version 2 or later; see LICENSE.txt    |
+| License        | GNU General Public License version 3; see LICENSE                 |
 | Author Email   | janik.baumann@bertschi.com                                        |
 | Author Url     | www.bertschi.com                                                  |
 | Version        | 1.0                                                               |
