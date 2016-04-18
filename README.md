@@ -14,7 +14,7 @@
 
 | Information    | Description                                                       |
 |----------------|-------------------------------------------------------------------|
-| Name           | plg_news_lister                                                   |
+| Name           | News Lister                                                       |
 | Author         | Janik Baumann                                                     |
 | Creation Date  | October 03 2015                                                   |
 | Copyright      | Copyright (c) 2015 - 2016 Bertschi AG. All rights reserved.       |
