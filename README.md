@@ -26,11 +26,10 @@
 | Group          | Content                                                           |
 | Joomla Version | 3.4.5                                                             |
 ## Description
-<p>It provides an option to list your news but with extended functionality like</p>
-<ul>
-    <li>Define Limit of articles</li>
-    <li>Define Offset of articles</li>
-    <li>Define a template for displaying an entry</li>
-    <li>Define as much as you want, categories for selecting from</li>
-    <li>Translations for specified news lists</li>
-</ul>
+It provides an option to list your news but with extended functionality like
+
+* Define Limit of articles
+* Define Offset of articles
+* Define a template for displaying an entry
+* Define as much as you want, categories for selecting from
+* Translations for specified news lists
