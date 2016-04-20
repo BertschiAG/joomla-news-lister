@@ -16,10 +16,26 @@ defined('_JEXEC') or die;
  */
 class plgContentNews_Lister extends JPlugin
 {
+
+    /**
+     * The regex string which provides as exactly plugin trigger.
+     *
+     * @var string
+     */
     private $_regex = '/{newslist\s(.*)}/i';
 
+    /**
+     * All arguments which were given to the plugin.
+     *
+     * @var array
+     */
     private $_arguments = array();
 
+    /**
+     * The default values for the required arguments.
+     *
+     * @var array
+     */
     private $_default_options = array(
         'template' => 'default',
         'categories' => '',
@@ -27,12 +43,32 @@ class plgContentNews_Lister extends JPlugin
         'limit' => 0,
     );
 
+    /**
+     * All selected categories.
+     *
+     * @var array
+     */
     private $_categories = array();
 
+    /**
+     * All selected articles.
+     *
+     * @var array
+     */
     private $_articles = array();
 
+    /**
+     * The rendered contents.
+     *
+     * @var array
+     */
     private $_content = array();
 
+    /**
+     * All available and granted hooks.
+     *
+     * @var array
+     */
     private $_allowed_hooks = array(
         'nl',
         'article',
@@ -48,7 +84,6 @@ class plgContentNews_Lister extends JPlugin
      * @param   integer $pPage The 'page' number
      *
      * @return  mixed   true if there is an error. Void otherwise.
-     *
      */
     public function onContentPrepare($pContext, &$pArticle, &$pParams, $pPage = 0)
     {
@@ -68,6 +103,9 @@ class plgContentNews_Lister extends JPlugin
         return true;
     }
 
+    /**
+     * Imports all necessary classes.
+     */
     private function _importClasses()
     {
         if (!class_exists('ContentPreparer')) require(NL_ROOT . '/engines/ContentPreparer.php');
@@ -88,6 +126,12 @@ class plgContentNews_Lister extends JPlugin
         return true;
     }
 
+    /**
+     * Checks if the plugin was triggered inaccurately.
+     *
+     * @param object $pArticle The article which should be parsed.
+     * @return bool Returns true if plugin is triggered inaccurate, false otherwise.
+     */
     private function _wasTriggered(&$pArticle)
     {
         if (strpos($pArticle->text, 'newslist') === false) {
@@ -96,6 +140,13 @@ class plgContentNews_Lister extends JPlugin
         return false;
     }
 
+    /**
+     * Checks if the plugin was triggered accurately.
+     * Stores the arguments if plugin was triggered.
+     *
+     * @param object $pArticle The article which should be parsed.
+     * @return bool Returns true if the plugin is triggered accurate, false otherwise.
+     */
     private function _prepareArguments(&$pArticle)
     {
         preg_match_all($this->_regex, $pArticle->text, $matches, PREG_SET_ORDER);
@@ -113,6 +164,9 @@ class plgContentNews_Lister extends JPlugin
         return true;
     }
 
+    /**
+     * Selects all categories which match the given arguments.
+     */
     private function _selectCategories()
     {
         foreach ($this->_arguments as $pValue) {
@@ -130,6 +184,9 @@ class plgContentNews_Lister extends JPlugin
         }
     }
 
+    /**
+     * Selects all articles which match the given arguments and categories.
+     */
     private function _selectArticles()
     {
         foreach ($this->_categories as $pKey => $pPass) {
@@ -154,6 +211,9 @@ class plgContentNews_Lister extends JPlugin
         }
     }
 
+    /**
+     * Starts the content preparer which prepares the content.
+     */
     private function _prepareContent()
     {
         $cp = new ContentPreparer($this->_allowed_hooks, $this->_default_options);
@@ -165,6 +225,11 @@ class plgContentNews_Lister extends JPlugin
         }
     }
 
+    /**
+     * Replaces the none parsed content with the parsed one.
+     *
+     * @param object $pArticle The article which should be parsed.
+     */
     private function _replaceContext(&$pArticle)
     {
         $pArticle->text = preg_replace($this->_regex, implode('', $this->_content), $pArticle->text);
