@@ -1,4 +1,7 @@
 <?php
+
+defined('_JEXEC') or die;
+
 /**
  * Created by PhpStorm.
  * Copyright: Bertschi AG, 2015
@@ -6,9 +9,11 @@
  * File: news_lister.php
  * Date: 03.11.2015
  * Time: 12:12
+ *
+ * @author Janik Baumann
+ * @copyright Bertschi AG, 2015
+ * @license ./LICENSE GNU General Public License version 3
  */
-defined('_JEXEC') or die;
-
 class plgContentNews_Lister extends JPlugin
 {
     private $_regex = '/{newslist\s(.*)}/i';

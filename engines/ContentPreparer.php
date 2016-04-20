@@ -1,5 +1,7 @@
 <?php
 
+defined('_JEXEC') or die;
+
 /**
  * Created by PhpStorm.
  * Copyright: Bertschi AG, 2015
@@ -7,6 +9,10 @@
  * File: ContentPreparer.php
  * Date: 18.11.2015
  * Time: 09:29
+ *
+ * @author Janik Baumann
+ * @copyright Bertschi AG, 2015
+ * @license ./LICENSE GNU General Public License version 3
  */
 class ContentPreparer
 {
